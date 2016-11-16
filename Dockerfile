@@ -11,6 +11,8 @@ RUN printf "deb http://httpredir.debian.org/debian testing main\ndeb http://http
   && cd geos-3.6.0 \
   && ./configure \
   && make install \
+  && cd .. \
+  && rm -rf geos-3.6.0 \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/ \
   && rm -rf /tmp/downloaded_packages/ /tmp/*.rds
